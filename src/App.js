@@ -26,7 +26,10 @@ function App() {
         isMyPageOpen={myPageOpen}
         onMyPageClick={setMyPageOpen}
       />
-      {login ? <MainPage /> : <StartPage />}
+      {login ? (
+        myPageOpen ? <MyPage /> : <MainPage />
+      ) : <StartPage /> }
+
       {loginModalOpen ? (
         <Login isLoginOpen={loginModalOpen} onXClick={setLoginModalOpen} />
       ) : null}
@@ -37,8 +40,8 @@ function App() {
           setLogin={setLogin}
         />
       ) : null}
-      {myPageOpen ? <MyPage /> : null}
-      {mainPageOpen ? <MainPage /> : null}
+      {/* {myPageOpen ? <MyPage /> : null} */}
+      {/* {mainPageOpen ? <MainPage /> : null} */}
     </div>
   );
 }
