@@ -809,6 +809,10 @@ video {
   width: 50%;
 }
 
+.w-oneThird {
+  width: 33.3333%;
+}
+
 .w-\[700px\] {
   width: 700px;
 }
