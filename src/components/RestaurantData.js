@@ -1,6 +1,6 @@
 import React from "react";
 
-const RestaurantData = ({setRListOpen, setRDataOpen, name, nums, score}) => {
+const RestaurantData = ({setRListOpen, setRDataOpen, name, nums, score, setRWriteReviewOpen}) => {
 
     function onBackClick(){
         setRListOpen(true);
@@ -19,7 +19,7 @@ const RestaurantData = ({setRListOpen, setRDataOpen, name, nums, score}) => {
             </div>
             <div style={{display: "flex", padding:'10px'}}>
                 <MenuData/>
-                <ReviewData/>
+                <ReviewData setRDataOpen={setRDataOpen} setRWriteReviewOpen={setRWriteReviewOpen}/>
             </div>
         </div>            
     );
@@ -49,7 +49,7 @@ const MenuElement =({menu, price})=>{
     );
 };
 
-const ReviewData=()=>{
+const ReviewData=({setRDataOpen, setRWriteReviewOpen})=>{
     return(
         <div style={{width: '48%', padding:'10px', border:'1px solid green', marginLeft:'10px'}}>
             <ReviewElement user="ABC" date="2023.05.11" review="맛있어요" score="4.0"/>
@@ -60,7 +60,7 @@ const ReviewData=()=>{
             <ReviewElement user="ABC" date="2023.05.11" review="맛있어요" score="4.0"/>
             <ReviewElement user="ABC" date="2023.05.11" review="맛있어요" score="4.0"/>
             <ReviewElement user="ABC" date="2023.05.11" review="맛있어요" score="4.0"/>
-            <button>리뷰 남기기</button>
+            <button onClick={() => {setRDataOpen(false);setRWriteReviewOpen(true);}}>리뷰 남기기</button>
         </div>
     );
 };
