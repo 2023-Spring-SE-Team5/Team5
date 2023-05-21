@@ -22,7 +22,7 @@ const MainPage = () => {
       {CategoryOpen && <Category setCategoryOpen={setCategoryOpen} setRListOpen={setRListOpen} setMenu={setMenu}/>}
       {RListOpen && <RestaurantList setCategoryOpen={setCategoryOpen} setRListOpen={setRListOpen} setRDataOpen={setRDataOpen} menu={Menu} setMenu={setMenu} setName={setRName} setNums={setRNums} setScore={setRScore}/>}
       {RDataOpen && <RestaurantData setRListOpen={setRListOpen} setRDataOpen={setRDataOpen} name={RName} nums={RNums} score={RScore} setRWriteReviewOpen={setRWriteReviewOpen}/>}
-      {WriteReviewOpen && <ReviewWrite setRWriteReviewOpen={setRWriteReviewOpen} setRDataOpen={setRDataOpen} name={RName}/>}
+      {WriteReviewOpen && <ReviewWrite setRWriteReviewOpen={setRWriteReviewOpen} setRDataOpen={setRDataOpen} RName={RName}/>}
     </div>
   );
 };

@@ -1,15 +1,18 @@
 import "./ReviewWrite.css";
 
 function ReviewWrite({setRWriteReviewOpen, setRDataOpen, RName}) {
+  console.log(RName)
   return (
-    <div className="ReviewWrite">
-      <p>음식은 어떠셨어요?<br/>{RName}<br/>점수를 입력해주세요!</p>
-      <input placeholder="1-5"></input>점
+    <div className="ReviewWrite h-screen bg-[#e1e1e1]/[0.3]" style={{textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh'}}>
+      <div className="rounded-xl">
+      <p className="font-bold text-xl">{RName} 음식은 어떠셨어요?<br/><br/><br/>점수를 입력해주세요!</p>
+      <input placeholder="1-5" style={{marginTop: '10px'}}></input>점
       <br/>
-      <p>리뷰를 입력해주세요!</p>
-      <input placeholder="리뷰"></input>
+      <p className="font-bold text-xl" style={{marginTop: '30px'}}>리뷰를 입력해주세요!</p>
+      <input placeholder="리뷰" style={{marginTop: '10px'}}></input>
       <br/>
-      <button onClick={() => {setRWriteReviewOpen(false);setRDataOpen(true);}}>리뷰 작성하기</button>
+      <button className="text-xl rounded-xl" style={{marginTop: '30px', background: '#afafaf',padding: '10px'}} onClick={() => {setRWriteReviewOpen(false);setRDataOpen(true);}}>리뷰 작성하기</button>
+      </div>
     </div>
   );
 }
