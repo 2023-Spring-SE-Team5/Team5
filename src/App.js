@@ -15,7 +15,6 @@ function App() {
   const [signUpModalOpen, setSignUpModalOpen] = useState(false);
   const [myPageOpen, setMyPageOpen] = useState(false);
   const [mainPageOpen, setMainPageOpen] = useState(false);
-  // const [isAnythingOpen, setIsAnythingOpen] = useState(true);
 
   return (
     <div className="w-screen relative">

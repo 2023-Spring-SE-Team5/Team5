@@ -10,7 +10,7 @@ const Login = ({ isLoginOpen, onXClick }) => {
   };
 
   return (
-    <div className="absolute top-[50%] right-[50%] translate-x-1/2 translate-y-1/2 flex flex-col justify-center items-center bg-slate-300/[0.5] w-[570px] h-[570px] rounded-3xl">
+    <div className="absolute top-0 right-[50%] translate-x-2/4 translate-y-2/4 flex flex-col justify-center items-center bg-slate-200 w-[570px] h-[570px] rounded-3xl">
       <h3 className="text-4xl mb-10 pb-1 select-none border-b-4 border-solid border-[#00ff00]/[0.3]">
         Login
       </h3>
