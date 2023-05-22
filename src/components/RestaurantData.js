@@ -8,6 +8,7 @@ const RestaurantData = ({
   score,
   setRWriteReviewOpen,
 }) => {
+  console.log(setRWriteReviewOpen)
   function onBackClick() {
     setRListOpen(true);
     setRDataOpen(false);

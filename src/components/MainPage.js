@@ -14,6 +14,9 @@ const MainPage = () => {
   const [RNums, setRNums] = useState("");
   const [RScore, setRScore] = useState("");
 
+  console.log(setRWriteReviewOpen);
+  console.log('asd');
+
   return (
     <div>
       {CategoryOpen && (

@@ -4,6 +4,7 @@ import { starting_point } from "../data/startingPoints";
 import Category from "./Category.js";
 import RestaurantList from "./RestaurantList.js";
 import RestaurantData from "./RestaurantData.js";
+import ReviewWrite from "./ReviewWrite";
 import MainPage from "./MainPage.js";
 
 // 두 좌표 간의 거리를 Haversine 공식을 사용하여 계산하는 함수
@@ -59,6 +60,7 @@ const Map = ({ locations }) => {
   const [RNums, setRNums] = useState("");
   const [RScore, setRScore] = useState("");
   const [nearestLocationName, setNearestLocationName] = useState("");
+  const [WriteReviewOpen, setRWriteReviewOpen] = useState(false);
 
   const [map, setMap] = useState(null);
   const [currentPosition, setCurrentPosition] = useState(null);
@@ -684,11 +686,19 @@ const Map = ({ locations }) => {
           <RestaurantData
             setRListOpen={setRListOpen}
             setRDataOpen={setRDataOpen}
+            setRWriteReviewOpen={setRWriteReviewOpen}
             name={RName}
             nums={RNums}
             score={RScore}
           />
         )}
+        {WriteReviewOpen && (
+        <ReviewWrite
+          setRWriteReviewOpen={setRWriteReviewOpen}
+          setRDataOpen={setRDataOpen}
+          RName={RName}
+        />
+      )}
         {/* Add the map related HTML elements here */}
       </div>
 
