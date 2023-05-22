@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import Header from "./components/Header";
 import Login from "./components/Login";
@@ -10,17 +11,27 @@ import Map from "./components/Kakao";
 import { locations } from "./data/locations";
 
 function App() {
-  const [login, setLogin] = useState(false);
+  const dispatch = useDispatch();
+  const login = useSelector((state) => state.login);
+
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [signUpModalOpen, setSignUpModalOpen] = useState(false);
   const [myPageOpen, setMyPageOpen] = useState(false);
   const [mainPageOpen, setMainPageOpen] = useState(false);
 
+  const logInDispatcher = () => {
+    dispatch({ type: "login" });
+  };
+
+  const logOutDispatcher = () => {
+    dispatch({ type: "logout" });
+  };
+
   return (
     <div className="w-screen relative">
       <Header
         login={login}
-        onLogInOut={setLogin}
+        onLogOut={logOutDispatcher}
         isLoginOpen={loginModalOpen}
         onLoginClick={setLoginModalOpen}
         isSignUpOpen={signUpModalOpen}
@@ -32,7 +43,7 @@ function App() {
       {/* <StartPage /> */}
       {loginModalOpen ? (
         <Login
-          setLogin={setLogin}
+          setLogin={logInDispatcher}
           isLoginOpen={loginModalOpen}
           setLoginModalOpen={setLoginModalOpen}
         />
@@ -41,7 +52,7 @@ function App() {
         <Signup
           isSignUpOpen={signUpModalOpen}
           setSignUpModalOpen={setSignUpModalOpen}
-          setLogin={setLogin}
+          setLogin={logInDispatcher}
         />
       ) : null}
       {myPageOpen ? <MyPage /> : null}

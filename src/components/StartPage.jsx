@@ -1,5 +1,4 @@
 import React from "react";
-import "./StartPage.css";
 
 const Th = ({ h1, h2, h3 }) => {
   return (
@@ -33,7 +32,7 @@ const CategoryImg = ({ name, src }) => {
   return (
     <div className="mx-4">
       <p className="mb-4 font-bold">{name}</p>
-      <img src={src} className="startPage-image rounded-full" alt=""></img>
+      <img src={src} className="w-[150px] h-[150px] rounded-full" alt=""></img>
     </div>
   );
 };
@@ -48,11 +47,11 @@ function StartPage() {
             어떻게 해결하고 있나요 ?
           </div>
           <div className="flex">
-            <div className="flex flex-col w-oneThird">
+            <div className="flex flex-col w-2/6">
               <div className="p-4 flex justify-around">
                 <img
                   src="/images/음식점.jpg"
-                  className="w-half rounded-full"
+                  className="w-[50%] rounded-full"
                   alt=""
                 ></img>
               </div>
@@ -62,11 +61,11 @@ function StartPage() {
               </div>
             </div>
 
-            <div className="flex flex-col w-oneThird">
+            <div className="flex flex-col w-2/6">
               <div className="p-4 flex justify-around">
                 <img
                   src="/images/goodOrBad.jpg"
-                  className="w-half rounded-full"
+                  className="w-6/12 rounded-full"
                   alt=""
                 ></img>
               </div>
@@ -76,11 +75,11 @@ function StartPage() {
               </div>
             </div>
 
-            <div className="flex flex-col w-oneThird">
+            <div className="flex flex-col w-2/6">
               <div className="p-4 flex justify-around">
                 <img
                   src="/images/생각.jpg"
-                  className="w-half rounded-full"
+                  className="w-6/12 rounded-full"
                   alt=""
                 ></img>
               </div>
@@ -110,7 +109,7 @@ function StartPage() {
         <div className="text-center p-8">
           <p className="text-2xl mb-6 font-bold">음식점 리뷰를 확인하세요 !</p>
           <div className="flex">
-            <div className="w-half p-4">
+            <div className="w-6/12 p-4">
               <p className="mb-4 text-lg">음식점A 방문 후기</p>
               <table className="w-full">
                 <thead className="bg-lime-500/[0.5]">
@@ -127,7 +126,7 @@ function StartPage() {
                 </tbody>
               </table>
             </div>
-            <div className="w-half p-4">
+            <div className="w-6/12 p-4">
               <p className="mb-2 text-lg">
                 ✏ 방문한 음식점에 리뷰를 남겨보세요 !
               </p>
@@ -153,7 +152,7 @@ function StartPage() {
             방문 데이터 기반 맞춤 추천 !
           </p>
           <div className="flex">
-            <div className="w-half text-center p-4">
+            <div className="w-6/12 text-center p-4">
               <p className="mb-4 text-lg">당신의 방문 데이터를 한눈에 !</p>
               <table className="w-full">
                 <thead className="bg-lime-500/[0.5]">
@@ -168,7 +167,7 @@ function StartPage() {
               </table>
             </div>
 
-            <div className="w-half text-center p-4">
+            <div className="w-6/12 text-center p-4">
               <div className="mb-6 py-2">
                 <p className="mb-2 text-lg">
                   📌 <strong>한식</strong> 음식점을 가장 많이 방문하셨군요 !

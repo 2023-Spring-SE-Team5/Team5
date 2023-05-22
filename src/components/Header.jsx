@@ -4,7 +4,7 @@ import { faUser, faHouse } from "@fortawesome/free-solid-svg-icons";
 
 const Header = ({
   login,
-  onLogInOut,
+  onLogOut,
   isLoginOpen,
   onLoginClick,
   isSignUpOpen,
@@ -13,7 +13,7 @@ const Header = ({
   onMyPageClick,
 }) => {
   const onLogoutClick = () => {
-    onLogInOut(false);
+    onLogOut(false);
     onMyPageClick(false);
   };
 

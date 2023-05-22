@@ -775,6 +775,10 @@ video {
   height: 1328px;
 }
 
+.h-\[150px\] {
+  height: 150px;
+}
+
 .w-\[120px\] {
   width: 120px;
 }
@@ -801,6 +805,22 @@ video {
 
 .w-\[1800px\] {
   width: 1800px;
+}
+
+.w-2\/6 {
+  width: 33.333333%;
+}
+
+.w-\[150px\] {
+  width: 150px;
+}
+
+.w-\[50\%\] {
+  width: 50%;
+}
+
+.w-6\/12 {
+  width: 50%;
 }
 
 .min-w-\[300px\] {

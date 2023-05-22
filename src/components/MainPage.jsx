@@ -1,8 +1,9 @@
+import { useState } from "react";
+
 import Category from "./Category";
 import RestaurantList from "./RestaurantList";
 import RestaurantData from "./RestaurantData";
 import ReviewWrite from "./ReviewWrite";
-import { useState } from "react";
 
 const MainPage = () => {
   const [CategoryOpen, setCategoryOpen] = useState(true);
@@ -13,9 +14,6 @@ const MainPage = () => {
   const [RName, setRName] = useState("");
   const [RNums, setRNums] = useState("");
   const [RScore, setRScore] = useState("");
-
-  console.log(setRWriteReviewOpen);
-  console.log('asd');
 
   return (
     <div>

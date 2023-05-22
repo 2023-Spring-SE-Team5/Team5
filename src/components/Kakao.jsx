@@ -5,7 +5,7 @@ import Category from "./Category.js";
 import RestaurantList from "./RestaurantList.js";
 import RestaurantData from "./RestaurantData.js";
 import ReviewWrite from "./ReviewWrite";
-import MainPage from "./MainPage.js";
+import MainPage from "./MainPage.jsx";
 
 // 두 좌표 간의 거리를 Haversine 공식을 사용하여 계산하는 함수
 function getDistance(lat1, lon1, lat2, lon2) {
@@ -693,12 +693,12 @@ const Map = ({ locations }) => {
           />
         )}
         {WriteReviewOpen && (
-        <ReviewWrite
-          setRWriteReviewOpen={setRWriteReviewOpen}
-          setRDataOpen={setRDataOpen}
-          RName={RName}
-        />
-      )}
+          <ReviewWrite
+            setRWriteReviewOpen={setRWriteReviewOpen}
+            setRDataOpen={setRDataOpen}
+            RName={RName}
+          />
+        )}
         {/* Add the map related HTML elements here */}
       </div>
 
