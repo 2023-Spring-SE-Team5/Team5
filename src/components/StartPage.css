@@ -1,0 +1,16 @@
+.startPage-image {
+  height: 150px;
+  width: 150px;
+}
+
+.w-half {
+  width: 50%;
+}
+  
+.w-oneThird {
+  width: 33.3333%;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
