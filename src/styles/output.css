@@ -771,6 +771,10 @@ video {
   height: 100%;
 }
 
+.h-\[1328px\] {
+  height: 1328px;
+}
+
 .w-\[120px\] {
   width: 120px;
 }
@@ -1048,6 +1052,18 @@ video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.bg-black\/\[0\.3\] {
+  background-color: rgb(0 0 0 / 0.3);
+}
+
+.bg-black\/\[0\.7\] {
+  background-color: rgb(0 0 0 / 0.7);
+}
+
+.bg-black\/\[0\.55\] {
+  background-color: rgb(0 0 0 / 0.55);
 }
 
 .p-2 {

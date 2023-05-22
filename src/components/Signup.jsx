@@ -26,42 +26,47 @@ const Login = ({ isSignUpOpen, setSignUpModalOpen, setLogin }) => {
   };
 
   return (
-    <div className="fixed top-0 right-[50%] translate-x-2/4 translate-y-2/4 flex flex-col justify-center items-center bg-slate-200 w-[570px] h-[570px] rounded-3xl">
-      <h3 className="text-4xl mb-10 pb-1 select-none border-b-4 border-solid border-[#00ff00]/[0.3]">
-        Sign Up
-      </h3>
-      <div>
-        <Input
-          kind="ID"
-          type="email"
-          placeholder="SKKU Account"
-          onChange={setID}
-        />
-        <Input
-          kind="PW"
-          type="text"
-          placeholder="SKKU Password"
-          onChange={setPW}
-        />
-        <Input
-          kind="PW Confirm"
-          type="text"
-          placeholder="Password Confirmation"
-          onChange={setPWC}
-        />
+    <div
+      onClick={onXBtnClick}
+      className="fixed top-0 right-[50%] translate-x-2/4 bg-black/[0.55] w-full h-full"
+    >
+      <div className="fixed top-0 right-[50%] translate-x-2/4 translate-y-2/4 flex flex-col justify-center items-center bg-slate-200 w-[570px] h-[570px] rounded-3xl">
+        <h3 className="text-4xl mb-10 pb-1 select-none border-b-4 border-solid border-[#00ff00]/[0.3]">
+          Sign Up
+        </h3>
+        <div>
+          <Input
+            kind="ID"
+            type="email"
+            placeholder="SKKU Account"
+            onChange={setID}
+          />
+          <Input
+            kind="PW"
+            type="text"
+            placeholder="SKKU Password"
+            onChange={setPW}
+          />
+          <Input
+            kind="PW Confirm"
+            type="text"
+            placeholder="Password Confirmation"
+            onChange={setPWC}
+          />
+        </div>
+        <button
+          onClick={onSignUpCompleteBtnClick}
+          className="text-xl rounded-lg mt-5 bg-lime-500 px-4 py-2 hover:bg-lime-500/[0.6] duration-150"
+        >
+          Sign Up
+        </button>
+        <button onClick={onXBtnClick}>
+          <FontAwesomeIcon
+            icon={faX}
+            className="absolute top-7 right-7 text-2xl text-black/[0.8] cursor-pointer"
+          />
+        </button>
       </div>
-      <button
-        onClick={onSignUpCompleteBtnClick}
-        className="text-xl rounded-lg mt-5 bg-lime-500 px-4 py-2 hover:bg-lime-500/[0.6] duration-150"
-      >
-        Sign Up
-      </button>
-      <button onClick={onXBtnClick}>
-        <FontAwesomeIcon
-          icon={faX}
-          className="absolute top-7 right-7 text-2xl text-black/[0.8] cursor-pointer"
-        />
-      </button>
     </div>
   );
 };
