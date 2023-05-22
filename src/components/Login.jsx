@@ -29,11 +29,12 @@ const Login = ({ setLogin, isLoginOpen, setLoginModalOpen }) => {
   };
 
   return (
-    <div
-      onClick={onXBtnClick}
-      className="fixed top-0 right-[50%] translate-x-2/4 bg-black/[0.55] w-full h-full"
-    >
-      <div className="absolute top-0 right-[50%] translate-x-2/4 translate-y-2/4 flex flex-col justify-center items-center bg-slate-200 w-[570px] h-[570px] rounded-3xl">
+    <>
+      <div
+        onClick={onXBtnClick}
+        className="z-3 absolute top-0 right-[50%] translate-x-2/4 bg-black/[0.55] w-full h-full"
+      ></div>
+      <div className="z-5 fixed top-0 right-[50%] translate-x-2/4 translate-y-2/4 flex flex-col justify-center items-center bg-slate-200 w-[570px] h-[570px] rounded-3xl">
         <h3 className="text-4xl mb-10 pb-1 select-none border-b-4 border-solid border-[#00ff00]/[0.3]">
           Login
         </h3>
@@ -64,7 +65,7 @@ const Login = ({ setLogin, isLoginOpen, setLoginModalOpen }) => {
           />
         </button>
       </div>
-    </div>
+    </>
   );
 };
 
