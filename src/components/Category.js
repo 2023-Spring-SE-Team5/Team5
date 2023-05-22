@@ -23,7 +23,7 @@ const Category = ({
       <h4>메뉴를 선택하세요</h4>
       <CategoryElement
         gotid="한식"
-        imgsrc="public\img\한식.jpg"
+        imgsrc="public\images\한식.jpg"
         choose={(gotid) => {
           if (gotid === "한식") handleKFoodButton();
           onCategoryChoose(gotid);
@@ -31,7 +31,7 @@ const Category = ({
       />
       <CategoryElement
         gotid="양식"
-        imgsrc="public\img\양식.jpg"
+        imgsrc="public\images\양식.jpg"
         choose={(gotid) => {
           if (gotid === "양식") handlewFoodButton();
           onCategoryChoose(gotid);
@@ -39,7 +39,7 @@ const Category = ({
       />
       <CategoryElement
         gotid="일식"
-        imgsrc="public\img\일식.jpg"
+        imgsrc="public\images\일식.jpg"
         choose={(gotid) => {
           if (gotid === "일식") handleJFoodButton();
           onCategoryChoose(gotid);
@@ -47,7 +47,7 @@ const Category = ({
       />
       <CategoryElement
         gotid="중식"
-        imgsrc="public\img\중식.jpg"
+        imgsrc="public\images\중식.jpg"
         choose={(gotid) => {
           if (gotid === "중식") handlecFoodButton();
           onCategoryChoose(gotid);
@@ -55,7 +55,7 @@ const Category = ({
       />
       <CategoryElement
         gotid="분식"
-        imgsrc="public\img\분식.png"
+        imgsrc="public\images\분식.png"
         choose={(gotid) => {
           if (gotid === "분식") handleschoolFoodButton();
           onCategoryChoose(gotid);
@@ -63,7 +63,7 @@ const Category = ({
       />
       <CategoryElement
         gotid="패스트푸드"
-        imgsrc="public\img\패스트푸드.jpg"
+        imgsrc="public\images\패스트푸드.jpg"
         choose={(gotid) => {
           if (gotid === "패스트푸드") handlefastFoodButton();
           onCategoryChoose(gotid);
