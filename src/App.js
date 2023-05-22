@@ -10,7 +10,7 @@ import Map from "./components/Kakao";
 import { locations } from "./data/locations";
 
 function App() {
-  const [login, setLogin] = useState(true);
+  const [login, setLogin] = useState(false);
   const [loginModalOpen, setLoginModalOpen] = useState(false);
   const [signUpModalOpen, setSignUpModalOpen] = useState(false);
   const [myPageOpen, setMyPageOpen] = useState(false);
@@ -20,7 +20,7 @@ function App() {
     <div className="w-screen relative">
       <Header
         login={login}
-        onLogout={setLogin}
+        onLogInOut={setLogin}
         isLoginOpen={loginModalOpen}
         onLoginClick={setLoginModalOpen}
         isSignUpOpen={signUpModalOpen}
@@ -31,7 +31,11 @@ function App() {
       {login ? <Map locations={locations} /> : <StartPage />}
       {/* <StartPage /> */}
       {loginModalOpen ? (
-        <Login isLoginOpen={loginModalOpen} onXClick={setLoginModalOpen} />
+        <Login
+          setLogin={setLogin}
+          isLoginOpen={loginModalOpen}
+          setLoginModalOpen={setLoginModalOpen}
+        />
       ) : null}
       {signUpModalOpen ? (
         <Signup

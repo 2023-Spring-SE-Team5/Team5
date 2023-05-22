@@ -1,12 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 
 import Input from "./Input";
 
-const Login = ({ isLoginOpen, onXClick }) => {
+const Login = ({ setLogin, isLoginOpen, setLoginModalOpen }) => {
+  const [ID, setID] = useState("");
+  const [PW, setPW] = useState("");
+
   const onXBtnClick = () => {
-    onXClick(!isLoginOpen);
+    setLoginModalOpen(!isLoginOpen);
+  };
+
+  const onLoginBtnClick = () => {
+    if (!ID.includes("@g.skku.edu") && !ID.includes("@skku.edu")) {
+      alert(
+        "Your ID must contain @g.skku.edu or @skku.edu. Please enter a valid ID."
+      );
+      return;
+    } else if (PW.length < 4) {
+      alert(
+        "Your PW must be longer than 4 characters. Please enter a valid PW."
+      );
+      return;
+    }
+    setLoginModalOpen(false);
+    setLogin(true);
   };
 
   return (
@@ -15,10 +34,23 @@ const Login = ({ isLoginOpen, onXClick }) => {
         Login
       </h3>
       <div>
-        <Input kind="ID" type="email" placeholder="SKKU Account" />
-        <Input kind="PW" type="text" placeholder="SKKU Password" />
+        <Input
+          kind="ID"
+          type="email"
+          placeholder="SKKU Account"
+          onChange={setID}
+        />
+        <Input
+          kind="PW"
+          type="text"
+          placeholder="SKKU Password"
+          onChange={setPW}
+        />
       </div>
-      <button className="text-xl rounded-lg mt-5 bg-lime-500 px-4 py-2 hover:bg-lime-500/[0.6] duration-150">
+      <button
+        onClick={onLoginBtnClick}
+        className="text-xl rounded-lg mt-5 bg-lime-500 px-4 py-2 hover:bg-lime-500/[0.6] duration-150"
+      >
         Login
       </button>
       <button onClick={onXBtnClick}>
