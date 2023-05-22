@@ -8,23 +8,30 @@ const RestaurantData = ({
   score,
   setRWriteReviewOpen,
 }) => {
-  console.log(setRWriteReviewOpen)
+  console.log(setRWriteReviewOpen);
   function onBackClick() {
     setRListOpen(true);
     setRDataOpen(false);
   }
 
   return (
-    <div className="border-[1px] border-solid border-green-500">
+    <div className="flex flex-col border-[1px] border-solid border-green-500">
+      <button
+        className="font-bold rounded-full border-solid border-2 border-orange-300 mt-4"
+        onClick={onBackClick}
+      >
+        Back
+      </button>
+      <button className="font-bold rounded-full border-solid border-2 border-orange-300 mt-4 mb-6">
+        My Page
+      </button>
       <div className="flex p-[10px] justify-between">
-        <button onClick={onBackClick}>Back</button>
-        <div>
+        <div className="w-full border-solid border-2 border-slate-300 rounded-lg">
           <h2 className="text-center">{name}</h2>
           <h4 className="text-center">
             리뷰 {nums}개, 평점 : {score}
           </h4>
         </div>
-        <button>My Page</button>
       </div>
       <div className="flex p-[10px]">
         <MenuData />

@@ -70,11 +70,13 @@ const RestaurantList = ({
   }
 
   return (
-    <div className="border-[1px] border-solid border-green-500 p-[10px] w-[150%] mt-[80px]">
-      <h5>menu</h5>
-      <h5>{menu}</h5>
-      <button onClick={onBackClick}>Back</button>
-      <select name="order">
+    <div className="flex flex-col border-[1px] border-solid border-green-500 p-[10px] w-[150%] mt-[80px]">
+      <h5 className="text-lg font-bold text-center">menu</h5>
+      <h5 className="text-base text-center mb-4">{menu}</h5>
+      <select
+        name="order"
+        className="mb-4 border-2 border-solid border-green-500 rounded-lg"
+      >
         <option value="RECO">추천순</option>
         <option value="DIST">거리순</option>
       </select>
@@ -85,6 +87,12 @@ const RestaurantList = ({
           choose={onRestaurantChoose}
         />
       ))}
+      <button
+        className="font-bold rounded-full border-solid border-2 border-orange-300 mt-6"
+        onClick={onBackClick}
+      >
+        Back
+      </button>
     </div>
   );
 };
@@ -93,10 +101,10 @@ const RestaurantElement = ({ name, dist, choose }) => {
   return (
     <div
       onClick={() => choose(name, 11, 4.2)}
-      className="border-[1px] border-solid border-green-500 mr-0"
+      className="border-[1px] border-solid border-green-500 mb-4 cursor-pointer"
     >
-      <p>{name}</p>
-      <p>{dist}</p>
+      <p className="text-center">{name}</p>
+      <p className="mt-4 text-center font-bold">{dist}</p>
     </div>
   );
 };
