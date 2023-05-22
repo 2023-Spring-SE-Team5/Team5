@@ -701,7 +701,7 @@ const Map = ({ locations }) => {
 
       <div
         id="map"
-        className="relative z-0 w-[1800px] h-[800px] translate-x-[7%] translate-y-[10%]"
+        className="relative z-0 w-[1800px] h-[800px] translate-x-[0%] translate-y-[0%]"
       />
     </div>
   );
