@@ -1,51 +1,41 @@
 import React from "react";
 
-const Th = ({h1, h2, h3}) => {
-  const thStyle = {
-    padding: '0.5rem',
-    border: '1px solid black'
-  }
-
+const Th = ({ h1, h2, h3 }) => {
   return (
     <tr>
-      <th style={thStyle}>{h1}</th>
-      <th style={thStyle}>{h2}</th>
-      <th style={thStyle}>{h3}</th>
+      <th className="p-[0.5rem] border-[1px] border-solid border-black">
+        {h1}
+      </th>
+      <th className="border-[1px] border-solid border-black">{h2}</th>
+      <th className="border-[1px] border-solid border-black">{h3}</th>
     </tr>
   );
-}
+};
 
 const TrData = ({ rank, category, num }) => {
-  const trStyle = {
-    background: 'white',
-  }
-
-  const tdStyle = {
-    padding: '0.5rem',
-    border: '1px solid black',
-  }
-
   return (
-    <tr style={trStyle}>
-      <td style={tdStyle}>{rank}</td>
-      <td style={tdStyle}>{category}</td>
-      <td style={tdStyle}>{num}</td>
+    <tr className="bg-white">
+      <td className="p-[0.5rem] border-[1px] border-solid border-black">
+        {rank}
+      </td>
+      <td className="p-[0.5rem] border-[1px] border-solid border-black">
+        {category}
+      </td>
+      <td className="p-[0.5rem] border-[1px] border-solid border-black">
+        {num}
+      </td>
     </tr>
   );
-}
+};
 
-const CategoryImg = ({name, src}) => {
+const CategoryImg = ({ name, src }) => {
   return (
     <div className="mx-4">
       <p className="mb-4 font-bold">{name}</p>
-        <img
-          src={src}
-          className="startPage-image rounded-full"
-          alt=""
-         ></img>
+      <img src={src} className="startPage-image rounded-full" alt=""></img>
     </div>
   );
-}
+};
 
 function StartPage() {
   return (
@@ -59,21 +49,25 @@ function StartPage() {
           <div className="flex">
             <div className="flex flex-col w-oneThird">
               <div className="p-4 flex justify-around">
-                <img src="/images/음식점.jpg"
+                <img
+                  src="/images/음식점.jpg"
                   className="w-half rounded-full"
-                  alt=""></img>              
+                  alt=""
+                ></img>
               </div>
               <div className="p-4">
                 <div className="text-xl mb-4">음식점이 너무 많아! 😦</div>
                 <div>결정을 못하는 당신을 위한 추천 서비스</div>
               </div>
             </div>
-            
+
             <div className="flex flex-col w-oneThird">
               <div className="p-4 flex justify-around">
-                <img src="/images/goodOrBad.jpg"
+                <img
+                  src="/images/goodOrBad.jpg"
                   className="w-half rounded-full"
-                  alt=""></img>   
+                  alt=""
+                ></img>
               </div>
               <div className="p-4">
                 <p className="text-xl mb-4">이 음식점 괜찮나? 🤨</p>
@@ -83,9 +77,11 @@ function StartPage() {
 
             <div className="flex flex-col w-oneThird">
               <div className="p-4 flex justify-around">
-                <img src="/images/생각.jpg"
+                <img
+                  src="/images/생각.jpg"
                   className="w-half rounded-full"
-                  alt=""></img>   
+                  alt=""
+                ></img>
               </div>
               <div className="p-4">
                 <p className="text-xl mb-4">내가 어디를 가봤더라..? 🤔</p>
@@ -117,21 +113,35 @@ function StartPage() {
               <p className="mb-4 text-lg">음식점A 방문 후기</p>
               <table className="w-full">
                 <thead className="bg-lime-500/[0.5]">
-                  <Th h1="음식점 명" h2="후기" h3="평점"/>
+                  <Th h1="음식점 명" h2="후기" h3="평점" />
                 </thead>
                 <tbody>
                   <TrData rank="음식점A" category="괜찮네요" num="3" />
-                  <TrData rank="음식점A" category="맛있습니다. 다음에 또 올게요!" num="5" />
+                  <TrData
+                    rank="음식점A"
+                    category="맛있습니다. 다음에 또 올게요!"
+                    num="5"
+                  />
                   <TrData rank="음식점A" category="맛있어요!" num="4" />
                 </tbody>
               </table>
             </div>
             <div className="w-half p-4">
-              <p className="mb-2 text-lg">✏ 방문한 음식점에 리뷰를 남겨보세요 !</p>
+              <p className="mb-2 text-lg">
+                ✏ 방문한 음식점에 리뷰를 남겨보세요 !
+              </p>
               <div className="my-8">
-                <input placeholder="평점(1-5)" className="mx-4 mb-4 p-2" style={{width: "100px", border:'1px solid grey'}}></input>
-                <input placeholder="방문 후기를 입력하세요." className="mx-4 mb-4 p-2" style={{width: "400px", border:'1px solid grey'}}></input>
-                <button className="mx-4 p-2 mb-4" style={{border:'1px solid grey'}}>확인</button>
+                <input
+                  placeholder="평점(1-5)"
+                  className="mx-4 mb-4 p-2 w-[100px] border-[1px] border-solid border-gray-500"
+                ></input>
+                <input
+                  placeholder="방문 후기를 입력하세요."
+                  className="mx-4 mb-4 p-2 w-[400px] border-[1px] border-solid border-gray-500"
+                ></input>
+                <button className="mx-4 p-2 mb-4 border-[1px] border-solid border-gray-500">
+                  확인
+                </button>
               </div>
             </div>
           </div>
@@ -160,16 +170,22 @@ function StartPage() {
             <div className="w-half text-center p-4">
               <div className="mb-6 py-2">
                 <p className="mb-2 text-lg">
-                📌 <strong>한식</strong> 음식점을 가장 많이 방문하셨군요 !
+                  📌 <strong>한식</strong> 음식점을 가장 많이 방문하셨군요 !
                 </p>
-                <div className="mb-2">이곳은 어떤가요?
-                  <button className="mx-4 p-2 bg-white rounded-3xl" style={{border:'1px solid grey'}}>율천회관</button>
+                <div className="mb-2">
+                  이곳은 어떤가요?
+                  <button className="mx-4 p-2 bg-white rounded-3xl border-[1px] border-solid border-gray-500">
+                    율천회관
+                  </button>
                 </div>
               </div>
               <div className="py-2">
                 <p className="mb-2 text-lg">📌 새로운 곳에 가보고 싶다면</p>
-                <div className="mb-2">이곳은 어떤가요?
-                  <button className="mx-4 p-2 bg-white rounded-3xl" style={{border:'1px solid grey'}}>써브웨이 수원성균관대점</button>
+                <div className="mb-2">
+                  이곳은 어떤가요?
+                  <button className="mx-4 p-2 bg-white rounded-3xl border-[1px] border-solid border-gray-500">
+                    써브웨이 수원성균관대점
+                  </button>
                 </div>
               </div>
             </div>
