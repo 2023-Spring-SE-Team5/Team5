@@ -19,19 +19,19 @@ const MyPage = () => {
       <p className="font-bold text-4xl mb-8">최근 방문</p>
       <ul className="text-2xl min-w-[300px] flex flex-col justify-start items-center mb-[250px]">
         <li className="bg-orange-500/[0.7] p-4 mb-4 rounded-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        피자헛 천천점
         </li>
         <li className="bg-orange-500/[0.7] p-4 mb-4 rounded-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        항아리보쌈 성대직영점
         </li>
         <li className="bg-orange-500/[0.7] p-4 mb-4 rounded-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        피자헛 천천점
         </li>
         <li className="bg-orange-500/[0.7] p-4 mb-4 rounded-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        신전떡볶이 수원성대점
         </li>
         <li className="bg-orange-500/[0.7] p-4 mb-4 rounded-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        BHC치킨 성대푸르지오점
         </li>
       </ul>
     </div>

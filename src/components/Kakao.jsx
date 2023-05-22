@@ -346,15 +346,15 @@ const Map = ({ locations }) => {
         setNearestLocationName(nearestLocationName);
 
         kakao.maps.event.addListener(marker, "click", function () {
-          window.open(
-            "https://map.kakao.com/link/to/" +
-              location.name +
-              "," +
-              location.latitude +
-              "," +
-              location.longitude
-          );
-          // window.open(`https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=%2C%2C495190%2C1053160&rt1=${nearestLocationName}&rt2=${location.name}&rtIds=%2C&rtTypes=%2C`, '_blank');
+          // window.open(
+          //   "https://map.kakao.com/link/to/" +
+          //     location.name +
+          //     "," +
+          //     location.latitude +
+          //     "," +
+          //     location.longitude
+          // );
+          window.open(`https://map.kakao.com/?map_type=TYPE_MAP&target=walk&rt=%2C%2C495190%2C1053160&rt1=${nearestLocationName}&rt2=${location.name}&rtIds=%2C&rtTypes=%2C`, '_blank');
         });
 
         marker.setMap(map);
