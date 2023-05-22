@@ -653,7 +653,7 @@ const Map = ({ locations }) => {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
+    <div className="flex">
       <div>
         {CategoryOpen && (
           <Category
@@ -692,20 +692,8 @@ const Map = ({ locations }) => {
         {/* Add the map related HTML elements here */}
       </div>
 
-      <div style={{ textAlign: "center" }}>
-        <div
-          style={{
-            position: "fixed",
-            top: "4.5%",
-            left: "75%",
-            transform: "translate(-50%, -50%)",
-            color: "black",
-            backgroundColor: "#FFDEAD",
-            padding: "10px",
-            borderRadius: "10px",
-            textAlign: "center",
-          }}
-        >
+      <div className="text-center">
+        <div className="fixed top-[4.5%] left-[75%] text-black bg-[#FFDEAD] p-[10px] rounded-[10px] text-center translate-x-[-50%] translate-y-[-50%]">
           Nearest location<br></br>
           {nearestLocationName}
         </div>
@@ -713,12 +701,7 @@ const Map = ({ locations }) => {
 
       <div
         id="map"
-        style={{
-          width: "1800px",
-          height: "800px",
-          transform: "translate(7%, 10%)",
-        }}
-        className="relative z-0"
+        className="relative z-0 w-[1800px] h-[800px] translate-x-[7%] translate-y-[10%]"
       />
     </div>
   );
