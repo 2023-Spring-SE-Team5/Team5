@@ -11,6 +11,7 @@ const RestaurantList = ({
   setName,
   setNums,
   setScore,
+  setReviews,
 }) => {
   const filteredLocations = locations.filter((location) => {
     switch (menu) {
@@ -61,12 +62,13 @@ const RestaurantList = ({
     setMenu("");
   }
 
-  function onRestaurantChoose(name, nums, score) {
+  function onRestaurantChoose(name, nums, score, reviews) {
     setRListOpen(false);
     setRDataOpen(true);
     setName(name);
-    setNums(nums);
-    setScore(score);
+    // setNums(nums);
+    // setScore(score);
+    // setReviews(reviews);
   }
 
   return (
@@ -100,7 +102,10 @@ const RestaurantList = ({
 const RestaurantElement = ({ name, dist, choose }) => {
   return (
     <div
-      onClick={() => choose(name, 11, 4.2)}
+      onClick={() => {
+        
+        choose(name)
+      }}
       className="border-[1px] border-solid border-green-500 mb-4 cursor-pointer"
     >
       <p className="text-center">{name}</p>

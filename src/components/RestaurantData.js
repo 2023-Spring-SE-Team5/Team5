@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const RestaurantData = ({
   setRListOpen,
   setRDataOpen,
   name,
-  nums,
-  score,
+  // nums,
+  // score,
+  // reviews,
   setRWriteReviewOpen,
 }) => {
   console.log(setRWriteReviewOpen);
@@ -13,6 +14,18 @@ const RestaurantData = ({
     setRListOpen(true);
     setRDataOpen(false);
   }
+
+  const [nums, setNums] = useState('');
+  const [score, setScore] = useState('');
+  const [reviews, setReviews] = useState([]);  
+
+  useEffect(() => {
+    const f = localStorage.getItem(name) ? JSON.parse(localStorage.getItem(name)) : []
+    setNums(f.length);
+    setScore(f.length ? (f.reduce((a, b) => a + parseInt(b.score), 0) / f.length).toFixed(1) : '-');
+    setReviews(f);
+  },
+   [name])
 
   return (
     <div className="flex flex-col border-[1px] border-solid border-green-500">
@@ -36,6 +49,7 @@ const RestaurantData = ({
       <div className="flex p-[10px]">
         <MenuData />
         <ReviewData
+          reviews={reviews}
           setRDataOpen={setRDataOpen}
           setRWriteReviewOpen={setRWriteReviewOpen}
         />
@@ -66,57 +80,17 @@ const MenuElement = ({ menu, price }) => {
   );
 };
 
-const ReviewData = ({ setRDataOpen, setRWriteReviewOpen }) => {
+const ReviewData = ({ reviews, setRDataOpen, setRWriteReviewOpen }) => {
   return (
     <div className="w-[48%] p-[10px] border-[1px] border-solid border-green-500 ml-[10px]">
-      <ReviewElement
-        user="ABC"
-        date="2023.05.11"
-        review="맛있어요"
-        score="4.0"
-      />
-      <ReviewElement
-        user="ABC"
-        date="2023.05.11"
-        review="맛있어요"
-        score="4.0"
-      />
-      <ReviewElement
-        user="ABC"
-        date="2023.05.11"
-        review="맛있어요"
-        score="4.0"
-      />
-      <ReviewElement
-        user="ABC"
-        date="2023.05.11"
-        review="맛있어요"
-        score="4.0"
-      />
-      <ReviewElement
-        user="ABC"
-        date="2023.05.11"
-        review="맛있어요"
-        score="4.0"
-      />
-      <ReviewElement
-        user="ABC"
-        date="2023.05.11"
-        review="맛있어요"
-        score="4.0"
-      />
-      <ReviewElement
-        user="ABC"
-        date="2023.05.11"
-        review="맛있어요"
-        score="4.0"
-      />
-      <ReviewElement
-        user="ABC"
-        date="2023.05.11"
-        review="맛있어요"
-        score="4.0"
-      />
+      {
+        reviews.map(r => <ReviewElement
+          user={r.user}
+          date={new Date(r.date).toLocaleDateString()}
+          review={r.review}
+          score={r.score}
+        />)
+      }
       <button
         onClick={() => {
           setRDataOpen(false);
@@ -133,7 +107,7 @@ const ReviewElement = ({ user, date, review, score }) => {
   return (
     <div className="border-[1px] border-solid border-green-500">
       <p>
-        {user} / {date} / {score}
+        {user} / {date} / {score}점
       </p>
       <p>{review}</p>
     </div>

@@ -59,6 +59,7 @@ const Map = ({ locations }) => {
   const [RName, setRName] = useState("");
   const [RNums, setRNums] = useState("");
   const [RScore, setRScore] = useState("");
+  const [RReviews, setRReviews] = useState([]);
   const [nearestLocationName, setNearestLocationName] = useState("");
   const [WriteReviewOpen, setRWriteReviewOpen] = useState(false);
 
@@ -681,6 +682,7 @@ const Map = ({ locations }) => {
             setName={setRName}
             setNums={setRNums}
             setScore={setRScore}
+            setReviews={setRReviews}
           />
         )}
         {RDataOpen && (
@@ -691,6 +693,7 @@ const Map = ({ locations }) => {
             name={RName}
             nums={RNums}
             score={RScore}
+            reviews={RReviews}
           />
         )}
         {WriteReviewOpen && (
