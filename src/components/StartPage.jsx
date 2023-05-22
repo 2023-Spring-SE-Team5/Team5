@@ -1,4 +1,5 @@
 import React from "react";
+import "./StartPage.css";
 
 const Th = ({ h1, h2, h3 }) => {
   return (
@@ -40,7 +41,7 @@ const CategoryImg = ({ name, src }) => {
 function StartPage() {
   return (
     <div className="flex">
-      <div className="justify-center w-full mt-16">
+      <div className="justify-center w-full mt-4">
         <div className="text-center p-8">
           <div className="text-3xl mb-6 font-bold">메뉴 고민</div>
           <div className="text-3xl mb-6 font-bold">
