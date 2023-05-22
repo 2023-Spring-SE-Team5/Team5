@@ -69,18 +69,4 @@ export const locations = [
     longitude: 126.9728,
     score: 1,
   },
-  {
-    category: "jfood",
-    name: "본찌돈까스 성대점",
-    latitude: 37.2987,
-    longitude: 126.9728,
-    score: 1,
-  },
-  {
-    category: "wfood",
-    name: "일미",
-    latitude: 37.2987,
-    longitude: 126.9728,
-    score: 1,
-  },
 ];

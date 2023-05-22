@@ -116,13 +116,13 @@ function StartPage() {
                   <Th h1="음식점 명" h2="후기" h3="평점" />
                 </thead>
                 <tbody>
-                  <TrData rank="음식점A" category="괜찮네요" num="3" />
+                  <TrData rank="피자헛 천천점" category="괜찮네요" num="3" />
                   <TrData
-                    rank="음식점A"
+                    rank="항아리보쌈 성대직영점"
                     category="맛있습니다. 다음에 또 올게요!"
                     num="5"
                   />
-                  <TrData rank="음식점A" category="맛있어요!" num="4" />
+                  <TrData rank="정성식탁" category="맛있어요!" num="4" />
                 </tbody>
               </table>
             </div>
