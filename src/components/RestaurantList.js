@@ -1,4 +1,6 @@
 import React from "react";
+import { locations } from "../data/locations";
+// import Map from "./Kakao.jsx";
 
 const RestaurantList = ({
   setCategoryOpen,
@@ -10,7 +12,50 @@ const RestaurantList = ({
   setNums,
   setScore,
 }) => {
+  const filteredLocations = locations.filter((location) => {
+    switch (menu) {
+      case "한식":
+        return location.category === "kfood";
+      case "일식":
+        return location.category === "jfood";
+      case "중식":
+        return location.category === "cfood";
+      case "양식":
+        return location.category === "wfood";
+      case "분식":
+        return location.category === "schoolfood";
+      case "패스트푸드":
+        return location.category === "fastfood";
+      default:
+        return location;
+    }
+  });
+
   function onBackClick() {
+    window.jfoodMarkers.forEach((item) => {
+      item.marker.setMap(null); // Set marker map to null
+      item.infowindow.close(); // Close infowindow
+    });
+    window.fastfoodMarkers.forEach((item) => {
+      item.marker.setMap(null); // Set marker map to null
+      item.infowindow.close(); // Close infowindow
+    });
+    window.cfoodMarkers.forEach((item) => {
+      item.marker.setMap(null); // Set marker map to null
+      item.infowindow.close(); // Close infowindow
+    });
+    window.wfoodMarkers.forEach((item) => {
+      item.marker.setMap(null); // Set marker map to null
+      item.infowindow.close(); // Close infowindow
+    });
+    window.kfoodMarkers.forEach((item) => {
+      item.marker.setMap(null); // Set marker map to null
+      item.infowindow.close(); // Close infowindow
+    });
+    window.schoolfoodMarkers.forEach((item) => {
+      item.marker.setMap(null); // Set marker map to null
+      item.infowindow.close(); // Close infowindow
+    });
     setCategoryOpen(true);
     setRListOpen(false);
     setMenu("");
@@ -25,7 +70,7 @@ const RestaurantList = ({
   }
 
   return (
-    <div className="border-[1px] border-solid border-green-500 p-[10px] w-[15%]">
+    <div className="border-[1px] border-solid border-green-500 p-[10px] w-[150%] mt-[80px]">
       <h5>menu</h5>
       <h5>{menu}</h5>
       <button onClick={onBackClick}>Back</button>
@@ -33,78 +78,22 @@ const RestaurantList = ({
         <option value="RECO">추천순</option>
         <option value="DIST">거리순</option>
       </select>
-      <RestaurantElement
-        name="본찌"
-        dist="0.9km"
-        choose={onRestaurantChoose}
-        reviewnums="11"
-        score="4.2"
-      />
-      <RestaurantElement
-        name="일미"
-        dist="0.9km"
-        choose={onRestaurantChoose}
-        reviewnums="166"
-        score="4.7"
-      />
-      <RestaurantElement
-        name="옛이야기"
-        dist="0.9km"
-        choose={onRestaurantChoose}
-        reviewnums="22"
-        score="4.0"
-      />
-      <RestaurantElement
-        name="알촌"
-        dist="0.9km"
-        choose={onRestaurantChoose}
-        reviewnums="32"
-        score="4.4"
-      />
-      <RestaurantElement
-        name="우리집밥"
-        dist="0.9km"
-        choose={onRestaurantChoose}
-        reviewnums="10"
-        score="4.0"
-      />
-      <RestaurantElement
-        name="포크포크"
-        dist="0.9km"
-        choose={onRestaurantChoose}
-        reviewnums="4"
-        score="4.3"
-      />
-      <RestaurantElement
-        name="왕돈까스"
-        dist="0.9km"
-        choose={onRestaurantChoose}
-        reviewnums="5"
-        score="4.6"
-      />
-      <RestaurantElement
-        name="오아저씨"
-        dist="0.9km"
-        choose={onRestaurantChoose}
-        reviewnums="9"
-        score="4.1"
-      />
-      <RestaurantElement
-        name="바른김밥"
-        dist="0.9km"
-        choose={onRestaurantChoose}
-        reviewnums="111"
-        score="4.0"
-      />
+      {filteredLocations.map((location) => (
+        <RestaurantElement
+          name={location.name}
+          dist="0.9km"
+          choose={onRestaurantChoose}
+        />
+      ))}
     </div>
   );
 };
 
-const RestaurantElement = ({ name, dist, choose, reviewnums, score }) => {
+const RestaurantElement = ({ name, dist, choose }) => {
   return (
     <div
-      onClick={() => choose(name, reviewnums, score)}
-      className="border-[1px] border-solid border-green-500"
+      onClick={() => choose(name, 11, 4.2)}
+      className="border-[1px] border-solid border-green-500 mr-0"
     >
       <p>{name}</p>
       <p>{dist}</p>
