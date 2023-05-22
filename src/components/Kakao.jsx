@@ -354,6 +354,7 @@ const Map = ({ locations }) => {
               "," +
               location.longitude
           );
+          // window.open(`https://map.kakao.com/?map_type=TYPE_MAP&target=car&rt=%2C%2C495190%2C1053160&rt1=${nearestLocationName}&rt2=${location.name}&rtIds=%2C&rtTypes=%2C`, '_blank');
         });
 
         marker.setMap(map);
